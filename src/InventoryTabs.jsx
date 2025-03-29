@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import "./InventoryTabs.css";
+import { Ingresos } from "./Tabs/Ingresos/Ingresos";
+import { Salidas } from "./Tabs/Salidas/Salidas";
+import { Productos } from "./Tabs/Productos/Productos";
 
 const InventoryTabs = () => {
     const [activeTab, setActiveTab] = useState("Ingresos");
@@ -38,9 +41,9 @@ const InventoryTabs = () => {
 
             {/* Área de contenido */}
             <div className="content">
-                {activeTab === "Ingresos" && <p>📥 Aquí se gestionan los ingresos.</p>}
-                {activeTab === "Salidas" && <p>📤 Aquí se gestionan las salidas.</p>}
-                {activeTab === "Productos" && <p>📦 Aquí se gestionan los productos.</p>}
+                {activeTab === "Ingresos" && <Ingresos />}
+                {activeTab === "Salidas" && <Salidas />}
+                {activeTab === "Productos" && <Productos />}
             </div>
         </div>
     );
